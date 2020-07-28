@@ -88,7 +88,7 @@ char USART::read_char(){
 }
 
 void USART::read_string(){
-	receive_buffer[buffer_position] = _USART->DR;
+	receive_buffer[buffer_position] = read_char();
 	buffer_position++;
 
 	if(buffer_position >= BUFFER_SIZE) buffer_position = 0;
